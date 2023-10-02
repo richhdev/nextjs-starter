@@ -16,7 +16,7 @@ export default styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   box-shadow: inset 0 0 20vw rgb(0 0 0 / 5%);
@@ -28,7 +28,7 @@ export default styled.div`
 
   /* dark theme */
   ${(props) =>
-    props.theme.isDark &&
+    props.theme.id === "dark" &&
     css`
       background-size: 300% 300%;
       background-image: ${`linear-gradient(145deg, #950F5F, #19386F, #227551)`};

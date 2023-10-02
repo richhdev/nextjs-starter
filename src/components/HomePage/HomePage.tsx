@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Head from "next/head";
 import GlobalMeta from "@/components/GlobalMeta";
 import { themeDark, themeLight } from "@/theme";
-import ThemeSwitch from "@/components/ThemeSwitch";
 import GradientBackground from "@/components/GradientBackground";
-import { Footer, Header, IconLink, Main, Outer } from "./_components";
-import GithubSvg from "@/images/github-icon.svg";
 import Tagline from "@/components/Tagline";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
   const [theme, setTheme] = useState(themeLight);
@@ -35,24 +33,29 @@ export default function Home() {
       </Head>
       <ThemeProvider theme={theme}>
         <Outer>
-          <Header>
-            <ThemeSwitch callback={setThemeSwitch} />
-          </Header>
+          <NavBar themeSwitch={themeSwitch} setThemeSwitch={setThemeSwitch} />
           <Main>
-            <Tagline text={"<Richh Nextjs Starter />"} />
+            <Tagline text={"Richh NextJS Starter"} />
           </Main>
-          <Footer>
-            <IconLink
-              href="https://github.com/richhdev/richh-nextjs-starter"
-              target="_blank"
-              aria-label="github"
-            >
-              <GithubSvg role="img" alt="github" />
-            </IconLink>
-          </Footer>
         </Outer>
         <GradientBackground />
       </ThemeProvider>
     </>
   );
 }
+
+const Outer = styled.div`
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  height: 100%;
+`;
+
+const Main = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+`;
