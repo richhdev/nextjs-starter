@@ -31,7 +31,7 @@ export const Container = styled.div`
   margin: 0;
   padding: 0;
 
-  font-family: "InconsolataVariable", -apple-system, BlinkMacSystemFont,
+  font-family: "Inconsolata Variable", -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: ${containerFontSize};
