@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { size } from "@/theme";
 import { clampDefault } from "@/theme/text";
 import { clampGen } from "@/utils/clamp-generator";
 import GithubSvg from "@/images/github-icon.svg";
@@ -33,7 +34,7 @@ const NavBarOuter = styled.div`
     maxFontSize: "80",
     ...clampDefault,
   })};
-  padding: 12px 24px;
+  padding: ${size.sm};
   backdrop-filter: blur(1px);
 
   display: flex;
@@ -41,15 +42,15 @@ const NavBarOuter = styled.div`
   gap: 8px;
 `;
 
-const size = clampGen({
+const iconSize = clampGen({
   minFontSize: "37.5",
   maxFontSize: "52",
   ...clampDefault,
 });
 
 const IconLink = styled.a`
-  width: ${size};
-  height: ${size};
+  width: ${iconSize};
+  height: ${iconSize};
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
